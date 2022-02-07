@@ -79,7 +79,7 @@ namespace CodeFirstKisiler.Controllers
             {
                 adres.AdresTanim = model.AdresTanim;
                 adres.KisiId = model.KisiId;
-                adres.Kisiler = model.Kisiler;
+                adres.Kisiler.ID = model.Kisiler.ID;
                 int sonuc = db.SaveChanges();
                 if (sonuc > 0)
                 {
@@ -91,6 +91,7 @@ namespace CodeFirstKisiler.Controllers
                     ViewBag.Result = "Güncelleme işlemi başarısız oldu!";
                     ViewBag.Status = "danger";
                 }
+                ViewBag.kisiler = TempData["Kisiler"];
             }
             return View();
         }

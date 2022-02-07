@@ -1,4 +1,5 @@
-﻿using CodeFirstKisiler.Models;
+﻿using CodeFirstKisiler.Filters;
+using CodeFirstKisiler.Models;
 using CodeFirstKisiler.Models.Manager;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace CodeFirstKisiler.Controllers
             return View();
 
         }
+        [AutFilter]
         public ActionResult Duzenle(int? kisiid)
         {
             Kisiler kisi = new Kisiler();
