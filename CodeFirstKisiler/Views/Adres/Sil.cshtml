@@ -1,0 +1,31 @@
+﻿@model CodeFirstKisiler.Models.Adres
+
+@{
+    ViewBag.Title = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Adresi silmek istediğinizden emin misiniz?</h3>
+<div>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Adres</td>
+            <td>@Model.AdresTanim</td>
+        </tr>
+        <tr>
+            <td>Kişi</td>
+            <td>@Model.Kisiler.Ad @Model.Kisiler.Soyad</td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Dön", "Index","Home")
+        </div>
+    }
+</div>
